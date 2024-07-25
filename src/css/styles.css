@@ -76,7 +76,6 @@ body {
   from {
     transform: translateX(-20%);
   }
-
   to {
     transform: translateX(-180%);
   }

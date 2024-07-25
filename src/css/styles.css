@@ -23,64 +23,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-size: cover;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-#covers-section {
-  position: relative;
-  padding: 50px 0;
-}
-
-.covers {
-  display: flex;
-  overflow: hidden;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.covers li {
-  flex: 0 0 auto;
-  margin-right: 20px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.covers li img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-} */
-
-/* Анімація для рядка, що біжить */
-/* .covers.moving li {
-  animation: marquee 10s linear infinite;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-} */
-
 body {
   margin: 0;
 }
@@ -93,6 +35,7 @@ body {
 
 .content {
   position: relative;
+  z-index: 1;
 }
 
 .marquee {
@@ -104,6 +47,8 @@ body {
   font-weight: 600;
   font-size: 34px;
   text-transform: uppercase;
+  background-image: url(/src/img/elements_vectors.png);
+  background-color:#242424;
 }
 
 .marquee__inner {
@@ -113,13 +58,13 @@ body {
 }
 
 .marquee__line {
-  background-color: #FFDC00;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-right: 50px;
+  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* width: calc(100% / 8); */
+  width: calc(100% / 2);
   white-space: nowrap;
   animation-name: marqueeLine;
   animation-duration: 5s;
@@ -135,4 +80,7 @@ body {
   to {
     transform: translateX(-180%);
   }
+}
+.visually-hidden{
+  overflow: hidden;
 }

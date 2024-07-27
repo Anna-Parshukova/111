@@ -1,12 +1,13 @@
-/**
-  |============================
+
+  /* |============================
   | include css partials with
   | default @import url()
   |============================
-*/
-/* @import url('./reset.css');
+
+@import url('./reset.css');
 @import url('./vite-promo.css');
-@import url('./header.css'); */
+@import url('./header.css');  */
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -23,6 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
 }
@@ -47,24 +49,22 @@ body {
   font-weight: 600;
   font-size: 34px;
   text-transform: uppercase;
-  background-image: url(/src/img/elements_vectors.png);
-  background-color:#242424;
+  background:
+    url(/img/elements_vectors.png) center no-repeat,
+    #242527;
+  background-size: contain;
 }
 
 .marquee__inner {
-  height: 100vh;
   display: flex;
   transform: rotate(16deg);
 }
 
 .marquee__line {
   flex-shrink: 0;
-  margin-right: 50px;
-  margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(100% / 2);
   white-space: nowrap;
   animation-name: marqueeLine;
   animation-duration: 5s;
@@ -76,10 +76,57 @@ body {
   from {
     transform: translateX(-20%);
   }
+
   to {
     transform: translateX(-180%);
   }
 }
-.visually-hidden{
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   overflow: hidden;
+  white-space: nowrap;
 }
+@media (min-width: 375px) {
+  .marquee__inner {
+    width: 282.29px;
+    height: 162.94px;
+  }
+
+  .marquee__line {
+    margin-right: 25px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  .marquee__inner {
+    width: 544px;
+    height: 314px;
+  }
+
+  .marquee__line {
+    width: calc(100% / 1);
+    margin-right: 30px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1440px) {
+  .marquee__inner {
+    width: 544px;
+    height: 314px;
+  }
+
+  .marquee__line {
+    width: calc(100% / 1);
+    margin-right: 30px;
+  }
+}
+
+
+

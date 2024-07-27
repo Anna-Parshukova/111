@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', function() {
     const coversSection = document.getElementById('covers-section');
     const coversList = document.querySelector('.covers');

@@ -41,7 +41,7 @@ body {
 }
 
 .marquee {
-  position: absolute;
+  position: relative;
   right: -800px;
   left: 0;
   overflow: hidden;
@@ -53,11 +53,12 @@ body {
     url(/img/elements_vectors.png) center no-repeat,
     #242527;
   background-size: contain;
+  margin-top: 0;
 }
 
 .marquee__inner {
-  display: flex;
-  transform: rotate(16deg);
+    display: flex;
+    transform: rotate(16deg);
 }
 
 .marquee__line {
@@ -70,6 +71,12 @@ body {
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  margin-right: 40px;
+  margin-top: 15px;
+}
+.marquee__line img {
+  width: 282.29px;
+  height: 162.94px;
 }
 
 @keyframes marqueeLine {
@@ -93,40 +100,25 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
-@media (min-width: 375px) {
-  .marquee__inner {
-    width: 282.29px;
-    height: 162.94px;
-  }
 
-  .marquee__line {
-    margin-right: 25px;
-  }
-}
 
-@media (min-width: 376px) and (max-width: 768px) {
-  .marquee__inner {
+
+@media (max-width: 768px){
+.marquee__line img {
     width: 544px;
     height: 314px;
   }
-
-  .marquee__line {
-    width: calc(100% / 1);
-    margin-right: 30px;
-  }
+    .marquee__line {
+      margin-right: 40px;
+    }
 }
+ @media (max-width: 1440px) {
+   .marquee__line img {
+     width: 544px;
+     height: 314px;
+   }
 
-@media (min-width: 769px) and (max-width: 1440px) {
-  .marquee__inner {
-    width: 544px;
-    height: 314px;
-  }
-
-  .marquee__line {
-    width: calc(100% / 1);
-    margin-right: 30px;
-  }
-}
-
-
-
+   .marquee__line {
+     margin-right: 40px;
+   }
+ }
